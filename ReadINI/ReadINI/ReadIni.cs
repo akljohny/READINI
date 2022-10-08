@@ -58,9 +58,10 @@ namespace ReadINI
             List<string> keys= new List<string>();
             foreach (var key in keyList)
             {
-                
+                if (key.Contains(keyref))
+                {
                     keys.Add(key);
-                
+                }
             }
                 return keys;
         }
