@@ -65,5 +65,11 @@ namespace ReadINI
             }
                 return keys;
         }
+         public static string GetValue(string section, string key, string path)
+        {
+            String valueTemp ;
+            GetPrivateProfileString(section, key, "", valueTemp, VALUE_SIZE, path);
+            return valueTemp.ToString();
+        }
     }
 }
