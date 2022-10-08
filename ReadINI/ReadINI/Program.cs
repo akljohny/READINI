@@ -1,8 +1,5 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReadINI
 {
@@ -10,6 +7,8 @@ namespace ReadINI
     {
         static void Main(string[] args)
         {
+             string filePath = "Mention path here";
+             List<string> sectionNameList = ReadINI.SectionNames(filePath);
         }
     }
 }
