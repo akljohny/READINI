@@ -34,5 +34,14 @@ namespace ReadINI
             return result;
         }
 
+         public static List<string> GetKeyList(string filePath, string section)
+        {
+            byte[] buffer = new byte[KEY_SIZE];
+            GetPrivateProfileSection(section, buffer, KEY_SIZE, filePath);
+            String[] keysTemp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
+            List<string> keylist = new List<string>();
+            
+            return keylist;
+        }
     }
 }
