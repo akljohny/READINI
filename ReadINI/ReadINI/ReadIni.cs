@@ -10,6 +10,7 @@ namespace ReadINI
     {
         public const int SECTION_SIZE = 32767;
         public const int KEY_SIZE = 2048;
+        public const int VALUE_SIZE = 255;
         
         [DllImport("kernel32")]
         private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
@@ -67,7 +68,7 @@ namespace ReadINI
         }
          public static string GetValue(string section, string key, string path)
         {
-            String valueTemp ;
+            StringBuilder valueTemp = new StringBuilder(VALUE_SIZE);
             GetPrivateProfileString(section, key, "", valueTemp, VALUE_SIZE, path);
             return valueTemp.ToString();
         }
