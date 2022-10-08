@@ -53,5 +53,16 @@ namespace ReadINI
             }
             return keylist;
         }
+        public static List<string> GetKey(List<string> keyList,string keyref)
+        {
+            List<string> keys= new List<string>();
+            foreach (var key in keyList)
+            {
+                
+                    keys.Add(key);
+                
+            }
+                return keys;
+        }
     }
 }
