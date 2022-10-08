@@ -11,9 +11,13 @@ namespace ReadINI
             List<string> sectionNameList = ReadINI.SectionNames(filePath);
             foreach (var section in sectionNameList)
             {
+                if (section != "")
+                {
                     Console.WriteLine("\nSection Name : {0}\n", section);
                     List<string> keyList = ReadINI.GetKeyList(filePath, section);
                     List<string>  keys= ReadINI.GetKey(keyList,"Type");
+                    
+                }
             }
         }
     }
