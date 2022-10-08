@@ -42,10 +42,14 @@ namespace ReadINI
             List<string> keylist = new List<string>();
             foreach (String entry in keysTemp)
             {
+                if (entry.Length > 0)
+                {
                     if (entry.Contains("="))
                     {
                         keylist.Add(entry.Substring(0, entry.IndexOf("=")));
                     }
+                }
+            }
             return keylist;
         }
     }
