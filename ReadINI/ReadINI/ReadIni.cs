@@ -40,7 +40,12 @@ namespace ReadINI
             GetPrivateProfileSection(section, buffer, KEY_SIZE, filePath);
             String[] keysTemp = Encoding.ASCII.GetString(buffer).Trim('\0').Split('\0');
             List<string> keylist = new List<string>();
-            
+            foreach (String entry in keysTemp)
+            {
+                    if (entry.Contains("="))
+                    {
+                        keylist.Add(entry.Substring(0, entry.IndexOf("=")));
+                    }
             return keylist;
         }
     }
